@@ -1,0 +1,12 @@
+# Disable directory browsing
+Options -Indexes
+
+# Set the default file for directory indexes
+DirectoryIndex index.php
+
+# Rewrite engine
+RewriteEngine On
+
+# Rewrite rule to redirect all requests to the public folder
+RewriteCond %{REQUEST_URI} !^/SchruteBay/public/
+RewriteRule ^(.*)$ /SchruteBay/public/$1 [L]
